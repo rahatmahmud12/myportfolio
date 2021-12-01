@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import img1 from '../../img/91.png'
 import img2 from '../../img/92.png'
 import img3 from '../../img/93.png'
 import img4 from '../../img/94.png'
+import Projects from '../Details/Projects';
 
 const Pages = () => {
+    const [projects, setProjects] = useState([])
+    useEffect(() => {
+        fetch('../../../Fakedata.json')
+            .then(res => res.json())
+            .then(data => setProjects(data))
+    }, [])
+
+
     return (
         <div>
+
             <header className="max-h-full bg-white p-6 grid">
 
                 <nav className="w-full grid justify-end">
@@ -42,14 +52,15 @@ const Pages = () => {
             </header>
 
 
-            <div className="md:gap-4 p-6 bg-blue-50 md:grid">
+            <div className="md:gap-4 p-6 w-100 bg-blue-50 md:grid" >
                 <div className="grid grid-cols-2 justify-between lg:px-40 md:mb-4">
-                    <h1 className=" my-6 justify-start md:text-left text-4xl">My Projects</h1>
+                    <h1 className=" my-6 justify-start md:text-left ml-32 text-4xl">My Projects</h1>
 
                 </div>
-                <div className="md:grid grid-cols-2 gap-6 lg:px-40">
+
+                <div className="md:grid  grid-cols-2 gap-6 lg:px-40">
                     <div>
-                        <div className="bg-white p-4">
+                        <div className="bg-white p-4 ">
                             <div>
                                 <div className="mb-4">
                                     <h1 className="text-2xl mb-6 font-bold text-gray-700">Mongo Bicycle Shop</h1>
@@ -60,98 +71,179 @@ const Pages = () => {
                                     <a className=" bg-gray-400 text-white rounded px-2" href="">Server Site</a> <br />
                                     <a className="mr-5 bg-gray-400 text-white rounded px-2" href="">Live site Code</a>
                                     <a className=" bg-gray-400 text-white rounded px-2" href="">Server Site Code</a> */}
-                                    <p className="mt-6"><img src={img1}></img></p>
+                                    <p className="mt-6"><img src="https://i.ibb.co/QvT5tYw/11.png"></img></p>
                                     {/* <p className="text-lg mt-10 text-gray-700">1. Fullstack niche related website and Users can log in by creating new account.<br />
                                         2. Users can purchase a product & cancel an order & add review.<br />
                                         3. Have admin and User dashboards. Admin can add , manage product and can
                                         make a user admin.<br />
                                         4. Tools: React js, Bootstrap, Express js, Private route, Firebase Authentication,
                                         MongoDB</p> */}
-                                    <button
+                                    <Link to="/one"><button
                                         class="inline-block mt-12 px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-red-500 rounded shadow ripple hover:shadow-lg hover:bg-red-600 focus:outline-none"
                                     >
                                         Details
-                                    </button>
+                                    </button></Link>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="bg-white p-4 md:mt-0 mt-6">
-                        <div>
-                            <div className="mb-4">
-                                <h1 className="text-2xl font-bold text-gray-700">Mongo Travel Agency</h1>
 
-                            </div>
 
-                            <div className="">
-                                <p className="mt-6"><img src={img2}></img></p>
-                                <button
-                                    class="inline-block mt-12 px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-red-500 rounded shadow ripple hover:shadow-lg hover:bg-red-600 focus:outline-none"
-                                >
-                                    Details
-                                </button>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div className="bg-white p-4 md:mt-0 mt-6">
-                        <div>
-                            <div className="mb-4">
-                                <h1 className="text-2xl font-bold text-gray-700">Bangladesh PG Hospital</h1>
 
-                            </div>
+                </div>
+                <div className="md:grid  grid-cols-2 gap-6 lg:px-40">
+                    <div>
+                        <div className="bg-white p-4 ">
+                            <div>
+                                <div className="mb-4">
+                                    <h1 className="text-2xl mb-6 font-bold text-gray-700">Mongo Travel Agency</h1>
+                                </div>
 
-                            <div className="">
-                                <p className="mt-6"><img src={img3}></img></p>
-                                <button
-                                    class="inline-block mt-12 px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-red-500 rounded shadow ripple hover:shadow-lg hover:bg-red-600 focus:outline-none"
-                                >
-                                    Details
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="bg-white p-4 md:mt-0 mt-6">
-                        <div>
-                            <div className="mb-4">
-                                <h1 className="text-2xl font-bold text-gray-700">Edu-Web Education Centre</h1>
-
-                            </div>
-
-                            <div className="">
-                                <p className="mt-6"><img src={img4}></img></p>
-                                <button
-                                    class="inline-block mt-12 px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-red-500 rounded shadow ripple hover:shadow-lg hover:bg-red-600 focus:outline-none"
-                                >
-                                    Details
-                                </button>
+                                <div className="">
+                                    {/* <a className="mr-5 text-white bg-gray-400 rounded px-2" href=" ">Live Site</a>
+                                    <a className=" bg-gray-400 text-white rounded px-2" href="">Server Site</a> <br />
+                                    <a className="mr-5 bg-gray-400 text-white rounded px-2" href="">Live site Code</a>
+                                    <a className=" bg-gray-400 text-white rounded px-2" href="">Server Site Code</a> */}
+                                    <p className="mt-6"><img src="https://i.ibb.co/SRrCdPK/21.png"></img></p>
+                                    {/* <p className="text-lg mt-10 text-gray-700">1. Fullstack niche related website and Users can log in by creating new account.<br />
+                                        2. Users can purchase a product & cancel an order & add review.<br />
+                                        3. Have admin and User dashboards. Admin can add , manage product and can
+                                        make a user admin.<br />
+                                        4. Tools: React js, Bootstrap, Express js, Private route, Firebase Authentication,
+                                        MongoDB</p> */}
+                                    <Link to='/two'><button
+                                        class="inline-block mt-12 px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-red-500 rounded shadow ripple hover:shadow-lg hover:bg-red-600 focus:outline-none"
+                                    >
+                                        Details
+                                    </button></Link>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+
+
+
+
+                </div>
+                <div className="md:grid  grid-cols-2 gap-6 lg:px-40">
+                    <div>
+                        <div className="bg-white p-4 ">
+                            <div>
+                                <div className="mb-4">
+                                    <h1 className="text-2xl mb-6 font-bold text-gray-700">Bangladesh PG Hospital</h1>
+                                </div>
+
+                                <div className="">
+                                    {/* <a className="mr-5 text-white bg-gray-400 rounded px-2" href=" ">Live Site</a>
+                                    <a className=" bg-gray-400 text-white rounded px-2" href="">Server Site</a> <br />
+                                    <a className="mr-5 bg-gray-400 text-white rounded px-2" href="">Live site Code</a>
+                                    <a className=" bg-gray-400 text-white rounded px-2" href="">Server Site Code</a> */}
+                                    <p className="mt-6"><img src="https://i.ibb.co/559T3s6/31.png"></img></p>
+                                    {/* <p className="text-lg mt-10 text-gray-700">1. Fullstack niche related website and Users can log in by creating new account.<br />
+                                        2. Users can purchase a product & cancel an order & add review.<br />
+                                        3. Have admin and User dashboards. Admin can add , manage product and can
+                                        make a user admin.<br />
+                                        4. Tools: React js, Bootstrap, Express js, Private route, Firebase Authentication,
+                                        MongoDB</p> */}
+                                    <Link to="/three"><button
+                                        class="inline-block mt-12 px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-red-500 rounded shadow ripple hover:shadow-lg hover:bg-red-600 focus:outline-none"
+                                    >
+                                        Details
+                                    </button></Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+                <div className="md:grid  grid-cols-2 gap-6 lg:px-40">
+                    <div>
+                        <div className="bg-white p-4 ">
+                            <div>
+                                <div className="mb-4">
+                                    <h1 className="text-2xl mb-6 font-bold text-gray-700">Edu-Web Educational Center</h1>
+                                </div>
+
+                                <div className="">
+                                    {/* <a className="mr-5 text-white bg-gray-400 rounded px-2" href=" ">Live Site</a>
+                                    <a className=" bg-gray-400 text-white rounded px-2" href="">Server Site</a> <br />
+                                    <a className="mr-5 bg-gray-400 text-white rounded px-2" href="">Live site Code</a>
+                                    <a className=" bg-gray-400 text-white rounded px-2" href="">Server Site Code</a> */}
+                                    <p className="mt-6"><img src="https://i.ibb.co/72q1h83/41.png"></img></p>
+                                    {/* <p className="text-lg mt-10 text-gray-700">1. Fullstack niche related website and Users can log in by creating new account.<br />
+                                        2. Users can purchase a product & cancel an order & add review.<br />
+                                        3. Have admin and User dashboards. Admin can add , manage product and can
+                                        make a user admin.<br />
+                                        4. Tools: React js, Bootstrap, Express js, Private route, Firebase Authentication,
+                                        MongoDB</p> */}
+                                    <Link to="/four"><button
+                                        class="inline-block mt-12 px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-red-500 rounded shadow ripple hover:shadow-lg hover:bg-red-600 focus:outline-none"
+                                    >
+                                        Details
+                                    </button></Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+                <div className="md:grid  grid-cols-2 gap-6 lg:px-40 w-100">
+                    <div>
+                        <div className="bg-white p-4 ">
+                            <div>
+                                <div className="mb-4">
+                                    <h1 className="text-2xl mb-6 font-bold text-gray-700">Top Scentists Foroum</h1>
+                                </div>
+
+                                <div className="">
+                                    {/* <a className="mr-5 text-white bg-gray-400 rounded px-2" href=" ">Live Site</a>
+                                    <a className=" bg-gray-400 text-white rounded px-2" href="">Server Site</a> <br />
+                                    <a className="mr-5 bg-gray-400 text-white rounded px-2" href="">Live site Code</a>
+                                    <a className=" bg-gray-400 text-white rounded px-2" href="">Server Site Code</a> */}
+                                    <p className="mt-6"><img src="https://i.ibb.co/6nBCQ6B/51.png"></img></p>
+                                    {/* <p className="text-lg mt-10 text-gray-700">1. Fullstack niche related website and Users can log in by creating new account.<br />
+                                        2. Users can purchase a product & cancel an order & add review.<br />
+                                        3. Have admin and User dashboards. Admin can add , manage product and can
+                                        make a user admin.<br />
+                                        4. Tools: React js, Bootstrap, Express js, Private route, Firebase Authentication,
+                                        MongoDB</p> */}
+                                    <Link to="/five"><button
+                                        class="inline-block mt-12 px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-red-500 rounded shadow ripple hover:shadow-lg hover:bg-red-600 focus:outline-none"
+                                    >
+                                        Details
+                                    </button></Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
                 </div>
 
-                {/* <div className="mt-6 p-4 bg-white px-6">
-                    <div className="border-b pb-6">
-                        <h1 className="mt-2 mb-6 text-center text-xl">Featured works</h1>
-                        <div className="md:grid grid-cols-2 gap-6">
-                            <div>
-                                <img className="md:h-full object-cover" src="https://images.unsplash.com/photo-1602992708529-c9fdb12905c9" alt="" />
-                            </div>
-                            <div>
-                                <h1 className="my-6 text-2xl font-bold text-gray-700">Designing Dashboards</h1>
-                                <span className="text-lg mr-4 py-1 px-4 rounded-full bg-gray-800 text-white">2020</span>
-                                <spnan className="text-lg">Dashboard</spnan>
-                                <p className="mt-6 text-lg text-gray-700">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
+
+
+
             </div>
+
+
             <footer className="bg-white">
-                <div className="flex mt-20 px-10 items-center justify-around max-md">
+                <div className="flex mt-20 px-10 items-center justify-center max-md">
                     <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 text-gray-800 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="https://www.w3.org/2000/svg" className="h-10 text-gray-800 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                         </svg>
                     </span>
@@ -173,6 +265,8 @@ const Pages = () => {
                 </div>
                 <p className="text-center my-10 text-lg">Copyright ©2021||Rahat Mahmud| All rights reserved</p>
             </footer>
+
+
 
         </div>
     );
